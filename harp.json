@@ -1,0 +1,7 @@
+{
+	"globals": {
+		"siteTitle": "WMK.IO",
+        "siteUrl": "http://wmk.surge.sh",
+        "seoDescription" : "Blog, Projects, and Musing of Wade Kallhoff"
+	}
+}
