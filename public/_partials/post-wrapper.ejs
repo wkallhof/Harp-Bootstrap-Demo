@@ -1,0 +1,9 @@
+<% var post = public.posts._data[current.source]; %>
+
+<div class="blog-post">
+  <h2 class="blog-post-title"><%= post.title %></h2>
+  <p class="blog-post-meta"><%= post.date %></p>
+
+  <%- yield %>
+  
+</div><!-- /.blog-post -->

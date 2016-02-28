@@ -16,68 +16,28 @@
     <link href="//getbootstrap.com/examples/blog/blog.css" rel="stylesheet">
     
   </head>
-
   <body>
-
-    <div class="blog-masthead">
-      <div class="container">
-        <nav class="blog-nav">
-          <a class="blog-nav-item active" href="/">Home</a>
-          <a class="blog-nav-item" href="/about">About</a>
-        </nav>
-      </div>
-    </div>
-
+    <%- partial("_partials/header") %>
     <div class="container">
-
       <div class="blog-header">
         <h1 class="blog-title">The Bootstrap Blog</h1>
         <p class="lead blog-description">The official example template of creating a blog with Bootstrap.</p>
       </div>
-
       <div class="row">
-
         <div class="col-sm-8 blog-main">
-
-          <%- yield %>
-
-          <nav>
-            <ul class="pager">
-              <li><a href="#">Previous</a></li>
-              <li><a href="#">Next</a></li>
-            </ul>
-          </nav>
-
+        <!-- BLOG POST-->
+        <%if (current.path[0] === "posts") { %>
+            <%- partial("_partials/post-wrapper", yield) %>
+            
+        <!-- HOME -->
+        <% } else { %>
+            <%- yield %>
+        <% } %>
         </div><!-- /.blog-main -->
-
-        <div class="col-sm-3 col-sm-offset-1 blog-sidebar">
-          <div class="sidebar-module sidebar-module-inset">
-            <h4>About</h4>
-            <p>Etiam porta <em>sem malesuada magna</em> mollis euismod. Cras mattis consectetur purus sit amet fermentum. Aenean lacinia bibendum nulla sed consectetur.</p>
-          </div>
-
-          <div class="sidebar-module">
-            <h4>Elsewhere</h4>
-            <ol class="list-unstyled">
-              <li><a href="#">GitHub</a></li>
-              <li><a href="#">Twitter</a></li>
-              <li><a href="#">Facebook</a></li>
-            </ol>
-          </div>
-        </div><!-- /.blog-sidebar -->
-
+        <%- partial("_partials/sidebar") %>
       </div><!-- /.row -->
-
     </div><!-- /.container -->
-
-    <footer class="blog-footer">
-      <p>Blog template built for <a href="http://getbootstrap.com">Bootstrap</a> by <a href="https://twitter.com/mdo">@mdo</a>.</p>
-      <p>
-        <a href="#">Back to top</a>
-      </p>
-    </footer>
-
-
+    <%- partial("_partials/footer") %>
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->

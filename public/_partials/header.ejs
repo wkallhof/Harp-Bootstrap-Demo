@@ -1,0 +1,9 @@
+<div class="blog-masthead">
+    <div class="container">
+    <nav class="blog-nav">
+        <% var path = current.path[0]; %>
+        <a class="blog-nav-item <%= (path === 'index' || path === 'posts') ? 'active': '' %>" href="/">Blog</a>
+        <a class="blog-nav-item <%= (path === 'about') ? 'active' : '' %>" href="/about">About</a>
+    </nav>
+    </div>
+</div>
